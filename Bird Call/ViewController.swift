@@ -7,14 +7,69 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-
+    var birdCaller = AVAudioPlayer()
+    var soundName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        }
+    @IBAction func hawkCall(_ sender: UIButton) {
+        soundName = "sound0"
+        if let sound = NSDataAsset(name: soundName){
+            do{
+                try birdCaller = AVAudioPlayer(data: sound.data)
+                birdCaller.play()
+            } catch {
+                print("Error: data in \(soundName) couldn't be played as a sound.")
+            }
+        } else {
+            print("Error: file \(soundName) didn't load.")
+        }
     }
-
-
+    
+    @IBAction func owlCall(_ sender: UIButton) {
+        soundName = "sound1"
+        if let sound = NSDataAsset(name: soundName){
+            do{
+                try birdCaller = AVAudioPlayer(data: sound.data)
+                birdCaller.play()
+            } catch {
+                print("Error: data in \(soundName) couldn't be played as a sound.")
+            }
+        } else {
+            print("Error: file \(soundName) didn't load.")
+        }
+    }
+    
+    
+    @IBAction func duckCall(_ sender: UIButton) {
+        soundName = "sound2"
+        if let sound = NSDataAsset(name: soundName){
+            do{
+                try birdCaller = AVAudioPlayer(data: sound.data)
+                birdCaller.play()
+            } catch {
+                print("Error: data in \(soundName) couldn't be played as a sound.")
+            }
+        } else {
+            print("Error: file \(soundName) didn't load.")
+        }
+    }
+    @IBAction func roosterCall(_ sender: UIButton) {
+        soundName = "sound3"
+        if let sound = NSDataAsset(name: soundName){
+            do{
+                try birdCaller = AVAudioPlayer(data: sound.data)
+                birdCaller.play()
+            } catch {
+                print("Error: data in \(soundName) couldn't be played as a sound.")
+            }
+        } else {
+            print("Error: file \(soundName) didn't load.")
+        }
+    }
+    
 }
 
